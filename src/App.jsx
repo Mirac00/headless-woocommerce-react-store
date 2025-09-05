@@ -18,9 +18,7 @@ import { useEffect, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
 import { myStoreHook } from './MyStoreContext.jsx'
 
-
 function App() {
-
   const { 
     setPageLoading, 
     loader, 
@@ -37,7 +35,7 @@ function App() {
 
   return (
     <>
-        <Router>
+        <Router basename={import.meta.env.BASE_URL}>
             <NavBar setUserLogout={ setUserLogout } isAuthenticated={ isAuthenticated } cartItem={ cart } />
 
             <div className='container'>
@@ -59,8 +57,6 @@ function App() {
 
             <Footer />
         </Router>
-
-
     </>
   )
 }
